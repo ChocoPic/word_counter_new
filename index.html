@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자수/단어수/Byte 세기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>글자수 세기</h1>
+    <p>바이트(byte) 안내<br>
+        한글 = 2byte<br>
+        공백, 숫자, 기호, 알파벳: 1byte
+    </p>
+    <textarea id="inputText" rows="5" placeholder="여기에 텍스트를 입력하세요"></textarea>
+    <p id="charCountWithSpace">공백 포함(일반적인 글자 수): 0</p>
+    <p id="charCountWithoutSpace">공백 제외: 0</p>
+    <p id="lineCount">줄바꿈 개수: 0</p>
+    <p id="wordCount">단어 수: 0</p>
+    <p id="sentenceCount">문장 수: 0</p>
+    <p id="byteCount">바이트(byte) 수: 0</p>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var textarea = document.getElementById('inputText');
+        var charCountWithSpace = document.getElementById('charCountWithSpace');
+        var charCountWithoutSpace = document.getElementById('charCountWithoutSpace');
+        var lineCount = document.getElementById('lineCount');
+        var wordCount = document.getElementById('wordCount');
+        var sentenceCount = document.getElementById('sentenceCount');
+        var byteCount = document.getElementById('byteCount');
+    
+        textarea.addEventListener('input', function() {
+            var text = this.value;
+            
+            // 글자수(공백 포함)
+            var charWithSpace = text.length;
+            charCountWithSpace.textContent = '공백 포함(일반적인 글자 수): ' + charWithSpace;
+    
+            // 공백 제외한 글자수
+            var charWithoutSpace = text.replace(/\s+/g, '').length;
+            charCountWithoutSpace.textContent = '공백 제외: ' + charWithoutSpace;
+    
+            // 줄바꿈 개수
+            var lines = text.split(/\r\n|\r|\n/).length;
+            lineCount.textContent = '줄바꿈 개수: ' + lines;
+    
+            // 단어 수
+            var words = text.split(/\s+/).filter(function(word) {
+                return word.length > 0;
+            }).length;
+            wordCount.textContent = '단어 수: ' + words;
+    
+            // 문장 수 (단순히 마침표의 개수로 계산)
+            var sentences = text.split('.').length - 1;
+            sentenceCount.textContent = '문장 수: ' + sentences;
+    
+            // 바이트 수 (한글 2바이트, 영문 1바이트로 계산)
+            var bytes = encodeURI(text).split(/%..|./).length - 1;
+            byteCount.textContent = '바이트(byte) 수: ' + bytes;
+        });
+    });    
+</script>

@@ -1,14 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'NanumSquareNeo';
     margin: 0;
     padding: 20px;
-}
-
-h1 {
     text-align: center;
 }
 
+h1 {
+    font-family: 'NanumGothic', sans-serif;
+}
+
 textarea {
-    width: 100%;
+    font-family: 'NanumGothic', sans-serif;
+    width: 90%;
+    max-width: 700px;
     margin-bottom: 10px;
+    padding: 12px;
+}
+
+#resultText{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: start;
 }

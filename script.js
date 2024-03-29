@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
             // 줄바꿈 개수
             var lines = text.split(/\r\n|\r|\n/).length;
-            lineCount.textContent = '줄바꿈 개수: ' + lines;
+            lineCount.textContent = '줄 개수: ' + lines;
     
             // 단어 수
             var words = text.split(/\s+/).filter(function(word) {

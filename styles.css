@@ -2,7 +2,14 @@ body {
     font-family: 'NanumSquareNeo';
     margin: 0;
     height: 100vh;
-    padding: 20px;
+    min-width: 240px;
+}
+#background{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    height: 300px;
+    background-color: #0766AD;
 }
 .container{
     display: flex;
@@ -10,17 +17,29 @@ body {
     align-items: center;
     justify-content: start;
 }
+h1 {
+    font-family: 'NanumGothic', sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+#infoText{
+    margin: -20px 8px 8px 8px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #dddddd;
+}
+
 #inner{
+    margin-top: 76px;
     width: 90%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(360px, auto);
     gap: 20px;
-}
-
-h1 {
-    font-family: 'NanumGothic', sans-serif;
-    text-align: center;
 }
 
 #inputText {
@@ -31,6 +50,15 @@ h1 {
     margin-bottom: 10px;
     padding: 12px;
     resize: vertical;
+    border-radius: 16px;
+    border: none;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1); /*그림자*/
+}
+#inputText:focus {
+    border-color: #007bff; /* 활성화된 상태의 테두리 색상 */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.3); /* 활성화된 상태의 그림자 효과 */
 }
 
 #resultText{
@@ -39,12 +67,7 @@ h1 {
     text-align: start;
     width: 90%;
     gap: 12px;
+
+    margin-bottom: 20px;
 }
 
-#infoText{
-    margin-top: 20px;
-    width: 100%;
-    text-align: end;
-    padding: 10px;
-    font-size: 14px;
-}

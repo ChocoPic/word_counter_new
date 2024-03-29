@@ -9,7 +9,7 @@ body {
     z-index: -100;
     width: 100%;
     height: 300px;
-    background-color: #0766AD;
+    background-color: #9ADE7B;
 }
 .container{
     display: flex;
@@ -18,19 +18,19 @@ body {
     justify-content: start;
 }
 h1 {
-    font-family: 'NanumGothic', sans-serif;
     text-align: center;
-    color: white;
+    color: black;
     margin-top: 100px;
 }
 
 #infoText{
+    font-family: 'NanumGothic';
     margin: -20px 8px 8px 8px;
     width: 100%;
     text-align: center;
     padding: 10px;
     font-size: 14px;
-    color: #dddddd;
+    color: #508D69;
 }
 
 #inner{
@@ -57,8 +57,8 @@ h1 {
     box-shadow: 0 3px 6px rgba(0,0,0,0.1); /*그림자*/
 }
 #inputText:focus {
-    border-color: #007bff; /* 활성화된 상태의 테두리 색상 */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.3); /* 활성화된 상태의 그림자 효과 */
+    border-color: #FF8F8F;
+    box-shadow: 0 0 5px rgba(238, 242, 150, 0.2), 0 0 10px rgba(238, 242, 150, 0.5);
 }
 
 #resultText{
@@ -67,7 +67,6 @@ h1 {
     text-align: start;
     width: 90%;
     gap: 12px;
-
     margin-bottom: 20px;
 }
 
